@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.note8">
+    package="br.h80r.note8">
    <application
-        android:label="note8"
+        android:label="Note8"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

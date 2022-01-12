@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
 set(BINARY_NAME "note8")
-set(APPLICATION_ID "com.example.note8")
+set(APPLICATION_ID "br.h80r.note8")
 
 cmake_policy(SET CMP0063 NEW)
 
