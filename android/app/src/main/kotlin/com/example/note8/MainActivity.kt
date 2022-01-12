@@ -1,4 +1,4 @@
-package com.example.note8
+package br.h80r.note8
 
 import io.flutter.embedding.android.FlutterActivity
 
