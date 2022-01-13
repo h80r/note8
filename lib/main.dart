@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:note8/canvas/home.dart';
+
+import 'canvas/home.dart';
 
 void main() {
   runApp(
@@ -22,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
