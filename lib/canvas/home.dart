@@ -34,6 +34,12 @@ class HomeCanvas extends ConsumerWidget {
         // Here we take the value from the HomeCanvas object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.pushNamed(context, '/settings'),
+          ),
+        ],
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -66,4 +72,3 @@ class HomeCanvas extends ConsumerWidget {
     );
   }
 }
-
