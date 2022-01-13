@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:nanoid/nanoid.dart';
-import 'package:note8/schema/enums/note_colors.dart';
+
+import 'enums/note_colors.dart';
 
 class NotebookSchema extends HiveObject {
   NotebookSchema(
