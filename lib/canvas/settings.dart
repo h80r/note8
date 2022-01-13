@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SettingsCanvas extends StatelessWidget {
+import 'package:note8/provider/settings.dart';
+
+class SettingsCanvas extends ConsumerWidget {
   const SettingsCanvas({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(SettingsNotifier.provider);
+    final notifier = ref.watch(SettingsNotifier.notifier);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
@@ -14,8 +20,8 @@ class SettingsCanvas extends StatelessWidget {
           SwitchListTile(
             title: const Text('Dark Mode'),
             secondary: const Icon(Icons.dark_mode),
-            value: false,
-            onChanged: (value) {},
+            value: state,
+            onChanged: notifier.setDark,
           ),
           ListTile(
             leading: const Icon(Icons.save),
