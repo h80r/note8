@@ -3,6 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:note8/provider/settings.dart';
 
+import 'components/link_text.dart';
+
 class SettingsCanvas extends ConsumerWidget {
   const SettingsCanvas({Key? key}) : super(key: key);
 
@@ -37,8 +39,11 @@ class SettingsCanvas extends ConsumerWidget {
             applicationVersion: '0.2.1',
             aboutBoxChildren: const [
               Text('Created by:'),
-              Text('h80r'),
-              Text('thaisclxt'),
+              LinkText(child: Text('h80r'), url: 'https://github.com/h80r/'),
+              LinkText(
+                child: Text('thaisclxt'),
+                url: 'https://github.com/thaisclxt',
+              ),
             ],
           ),
         ],
