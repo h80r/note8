@@ -5,6 +5,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'canvas/home.dart';
 import 'canvas/settings.dart';
+import 'provider/settings.dart';
 
 void main() async {
   Hive.init((await getApplicationDocumentsDirectory()).path);
@@ -17,18 +18,21 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDarkMode = ref.watch(SettingsNotifier.provider);
     return MaterialApp(
       title: 'Note8',
       routes: {
         '/': (_) => const HomeCanvas(title: 'Flutter Demo Home Page'),
         '/settings': (_) => const SettingsCanvas(),
       },
+      themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      darkTheme: ThemeData.dark(),
     );
   }
 }
